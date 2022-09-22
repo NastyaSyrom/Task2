@@ -1,0 +1,35 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class HelloApplication{
+    + void start()
+    + {method} {static} void main()
+}
+
+class HelloController{
+    {field} - my_canvas : Canvas
+    - {field} sides_number : TextField
+    - {field} lab1 : Label
+    - {method} void  onHelloButtonClick()
+}
+abstract class Shape {
+    {field} - ShapeColor : Color;
+    {abstract} {method} + String toString()
+    {abstract} {method} + void DrawShape()
+    {method} + void setColor()
+    {method} + void ClearCanvas()
+    {method} + Shape()
+}
+
+class nGon {
+    {field} - int SidesNumber
+    {field} - int Radius
+    + void nGon()
+    + String getColor()
+
+}
+HelloApplication <|-- HelloController
+
+nGon <|-- Shape
+HelloController <|-- nGon
+@enduml

@@ -9,7 +9,7 @@ class HelloApplication{
 class HelloController{
     {field} - my_canvas : Canvas
     - {field} sides_number : TextField
-    - {field} lab1 : Label
+    - {field} labe1 : Label
     - {method} void  onHelloButtonClick()
 }
 abstract class Shape {
@@ -21,15 +21,15 @@ abstract class Shape {
     {method} + Shape()
 }
 
-class nGon {
-    {field} - int SidesNumber
+class mnogougolniki {
+    {field} - int SNum
     {field} - int Radius
-    + void nGon()
+    + void mnogougolniki()
     + String getColor()
 
 }
-HelloApplication <|-- HelloController
 
-nGon <|-- Shape
-HelloController <|-- nGon
+Shape --|> mnogougolniki
+mnogougolniki --|> HelloController
+HelloController --|> HelloApplication
 @enduml
